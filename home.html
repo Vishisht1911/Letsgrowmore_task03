@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Enrollment Form</title>
+    <link rel="stylesheet" href="home.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="home.js"></script>
+  </head>
+  <body ng-app="myapp" ng-controller="myctrl">
+    <div class="header">
+      <center><h1>Student Enrollment Form</h1></center>
+    </div>
+    <div class="container">
+      <div class="form">
+        <label for="fname">Name:</label>
+        <input type="text" ng-model="fname" name="fname" /><br /><br />
+
+        <label for="email">Email:</label>
+        <input type="text" ng-model="mail" name="email" /><br /><br />
+
+        <label for="Website">Institute:</label>
+        <input type="text" ng-model="web" name="Website" /><br /><br />
+
+        <label for="Img Link">Specialization:</label>
+        <input type="text" ng-model="image" name="Img Link" /><br /><br />
+
+        <label for="Gender">Gender &nbsp; &nbsp;</label>
+        <input type="radio" name="gender" id="male" value="male" checked />
+        <label for="male">Male</label>
+
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">Female</label><br /><br />
+
+        <label for="Skills">Skills &nbsp; &nbsp;</label>
+        <input type="checkbox" id="Java" name="Java" value="Bike" />
+        <label for="Java">Java &nbsp;</label>
+        <input type="checkbox" id="HTML" name="HTML" value="Car" />
+        <label for="HTML">HTML &nbsp;</label>
+        <input type="checkbox" id="CSS" name="CSS" value="Boat" />
+        <label for="CSS">CSS</label><br /><br />
+        <br /><br /><br />
+        <div class="inp">
+          <input
+            type="submit"
+            id="add"
+            value="Enroll Student"
+            ng-click="addValues()"
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="tbl">
+        <table>
+          <thead>
+            <th bgcolor="#00bfff">Name:</th>
+            <th bgcolor="#87cefa">Email ID:</th>
+            <th bgcolor="#00bfff">Institute:</th>
+            <th bgcolor="#87cefa">Specialization:</th>
+          </thead>
+          <tr ng-repeat="x in details.info">
+            <td>{{x.fn}}</td>
+            <td>{{x.ml}}</td>
+            <td>{{x.wb}}</td>
+            <td>{{x.imag}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
